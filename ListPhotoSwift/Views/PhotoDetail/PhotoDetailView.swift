@@ -19,18 +19,17 @@ struct PhotoDetailView: View {
             Image(uiImage: viewModel.uiImage)
                 .resizable()
                 .scaledToFill()
-                .cornerRadius(13)
                 .padding()
             Spacer()
             Button(action: {
                 viewModel.isShareDisplayed.toggle()
             }, label: {
-                Label("Share", image: "square.and.arrow.up")
+                Label("Share", systemImage: "square.and.arrow.up")
             })
             .sheet(isPresented: $viewModel.isShareDisplayed, content: {
-                ShareSheet(photo: viewModel.uiImage, title: viewModel.picture.title)
+                ShareSheet(photo: viewModel.uiImage, title: viewModel.title)
             })
-            .navigationTitle(viewModel.picture.title)
+            .navigationTitle(viewModel.title)
         }
     }
 }

@@ -9,6 +9,6 @@ import Foundation
 
 struct Picture {
     let id = UUID()
-    var data: Data
+    var viewModel: PhotoDetailViewModel
     var title: String
 }

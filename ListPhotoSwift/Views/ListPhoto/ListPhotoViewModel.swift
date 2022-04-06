@@ -16,9 +16,10 @@ class ListPhotoViewModel: ObservableObject {
     
     func addPicture() {
         if let data = selectedPicture.jpegData(compressionQuality: 0.8) {
+            let title = url?.absoluteString ?? "Foo"
             photos.append(Picture(
-                data: data,
-                title: url?.absoluteString ?? "Foo"
+                viewModel: PhotoDetailViewModel(uiImage: UIImage(data: data) ?? UIImage(), title: title),
+                title: title
             ))
         }
     }

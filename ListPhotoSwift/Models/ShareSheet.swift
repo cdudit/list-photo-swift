@@ -14,13 +14,14 @@ struct ShareSheet: UIViewControllerRepresentable {
     let title: String
           
     func makeUIViewController(context: Context) -> UIActivityViewController {
-        let itemSource = ShareActivityItemSource(shareText: title, shareImage: photo)
+        let itemSource = ShareActivityItemSource(title: title, text: "Picture")
         
         let activityItems: [Any] = [photo, title, itemSource]
         
         let controller = UIActivityViewController(
             activityItems: activityItems,
-            applicationActivities: nil)
+            applicationActivities: nil
+        )
         
         return controller
     }
@@ -30,27 +31,30 @@ struct ShareSheet: UIViewControllerRepresentable {
 }
 
 class ShareActivityItemSource: NSObject, UIActivityItemSource {
+    var title: String
+    var text: String
     
-    var shareText: String
-    var shareImage: UIImage
-    var linkMetaData = LPLinkMetadata()
-    
-    init(shareText: String, shareImage: UIImage) {
-        self.shareText = shareText
-        self.shareImage = shareImage
-        linkMetaData.title = shareText
+    init(title: String, text: String) {
+        self.title = title
+        self.text = text
         super.init()
     }
     
     func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
-        return UIImage(named: "AppIcon ") as Any
+        return text
     }
     
     func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
-        return nil
+        return text
     }
     
+    func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+        return title
+    }
+
     func activityViewControllerLinkMetadata(_ activityViewController: UIActivityViewController) -> LPLinkMetadata? {
-        return linkMetaData
+        let metadata = LPLinkMetadata()
+        metadata.title = title
+        return metadata
     }
 }

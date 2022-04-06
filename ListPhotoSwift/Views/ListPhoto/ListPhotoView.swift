@@ -15,7 +15,7 @@ struct ListPhotoView: View {
             List {
                 ForEach(viewModel.photos, id: \.id) { photo in
                     NavigationLink(photo.title) {
-                        PhotoDetailView(viewModel: PhotoDetailViewModel(picture: photo))
+                        PhotoDetailView(viewModel: photo.viewModel)
                     }
                 }
             }
