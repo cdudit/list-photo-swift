@@ -17,6 +17,7 @@
 		15B1722A27FD82B80052820F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1722927FD82B80052820F /* ImagePicker.swift */; };
 		15B1722C27FD82E60052820F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1722B27FD82E60052820F /* Coordinator.swift */; };
 		15B1722E27FD83380052820F /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1722D27FD83380052820F /* Picture.swift */; };
+		15B1723027FDA3A70052820F /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1722F27FDA3A70052820F /* ShareSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		15B1722927FD82B80052820F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		15B1722B27FD82E60052820F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		15B1722D27FD83380052820F /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		15B1722F27FDA3A70052820F /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				15B1722927FD82B80052820F /* ImagePicker.swift */,
 				15B1722B27FD82E60052820F /* Coordinator.swift */,
 				15B1722D27FD83380052820F /* Picture.swift */,
+				15B1722F27FDA3A70052820F /* ShareSheet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				15B1722E27FD83380052820F /* Picture.swift in Sources */,
 				15B1722A27FD82B80052820F /* ImagePicker.swift in Sources */,
 				15B1720F27FD78960052820F /* ListPhotoSwiftApp.swift in Sources */,
+				15B1723027FDA3A70052820F /* ShareSheet.swift in Sources */,
 				15B1722C27FD82E60052820F /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

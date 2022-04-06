@@ -16,8 +16,11 @@ class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationContro
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let image = info[.originalImage] as? UIImage {
             parent.selectedImage = image
+        }
+        if let url = info[.imageURL] as? URL {
+            parent.selectedUrl = url
         }
         parent.presentationMode.wrappedValue.dismiss()
     }

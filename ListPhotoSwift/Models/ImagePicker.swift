@@ -11,6 +11,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
     var sourceType: UIImagePickerController.SourceType = .camera
     @Binding var selectedImage: UIImage
+    @Binding var selectedUrl: URL?
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()

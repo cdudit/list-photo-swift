@@ -12,14 +12,13 @@ class ListPhotoViewModel: ObservableObject {
     @Published var photos: [Picture] = [Picture]()
     @Published var isPickerDisplayed = false
     @Published var selectedPicture: UIImage = UIImage()
+    @Published var url: URL? = nil
     
     func addPicture() {
-        print(selectedPicture.ciImage)
-        if let url = selectedPicture.ciImage?.url {
-            print("here")
+        if let data = selectedPicture.jpegData(compressionQuality: 0.8) {
             photos.append(Picture(
-                viewModel: PhotoDetailViewModel(),
-                url: url
+                data: data,
+                title: url?.absoluteString ?? "Foo"
             ))
         }
     }

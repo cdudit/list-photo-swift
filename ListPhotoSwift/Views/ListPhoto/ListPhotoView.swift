@@ -14,8 +14,8 @@ struct ListPhotoView: View {
         NavigationView {
             List {
                 ForEach(viewModel.photos, id: \.id) { photo in
-                    NavigationLink(photo.url.absoluteString) {
-                        PhotoDetailView()
+                    NavigationLink(photo.title) {
+                        PhotoDetailView(viewModel: PhotoDetailViewModel(picture: photo))
                     }
                 }
             }
@@ -30,7 +30,7 @@ struct ListPhotoView: View {
             .sheet(isPresented: $viewModel.isPickerDisplayed) {
                 viewModel.addPicture()
             } content: {
-                ImagePicker(selectedImage: $viewModel.selectedPicture)
+                ImagePicker(selectedImage: $viewModel.selectedPicture, selectedUrl: $viewModel.url)
             }
         }
     }
